@@ -6,7 +6,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { PokemonItemComponent, PokemonListComponent } from './components';
 import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BrowserModule } from '@angular/platform-browser';
 
 const COMPONENTS = [
   PokemonListComponent,
@@ -18,8 +17,7 @@ const MODULES = [
   CommonModule,
   MatCardModule,
   MatButtonModule,
-  BrowserAnimationsModule,
-  BrowserModule,
+  BrowserAnimationsModule
 ];
 
 @NgModule({
