@@ -1,0 +1,10 @@
+:host {
+  .pokemon-container {
+    display: flex;
+    flex-direction: row;
+    .pokemons, .pokemon {
+      border: 1px solid black;
+      border-radius: 4px;
+    }
+  }
+}
