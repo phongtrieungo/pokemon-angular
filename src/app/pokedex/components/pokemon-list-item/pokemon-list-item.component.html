@@ -1,10 +1,5 @@
 <ng-container *ngIf="pokemons?.results?.length">
   <div class="pokemon-container">
-    <ul class="pokemons">
-      <li *ngFor="let pokemon of pokemons.results"><a href="javascript:;" (click)="view(pokemon)">{{ pokemon.name }}</a></li>
-    </ul>
-    <div class="pokemon">
-      <app-pokemon-item [pokemon]="pokemon$ | async"></app-pokemon-item>
-    </div>
+      <app-pokemon-item *ngFor="let pokemon of pokemons.results" [pokemonResult]="pokemon"></app-pokemon-item>
   </div>
 </ng-container>

@@ -1,6 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Pokemon } from 'src/app/interfaces';
+import { Store } from '@ngrx/store';
+import { Observable, of, Subject } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Pokemon, PokemonResult } from 'src/app/interfaces';
 import { PokedexService } from 'src/app/services/pokedex.service';
+import { getPokemon } from '../../actions';
+import { State } from '../../reducers/pokedex.reducer';
 
 @Component({
   selector: 'app-pokemon-item',
@@ -8,12 +13,16 @@ import { PokedexService } from 'src/app/services/pokedex.service';
   styleUrls: ['./pokemon-item.component.scss']
 })
 export class PokemonItemComponent implements OnInit {
-  @Input() pokemon: Pokemon;
+  @Input() pokemonResult: PokemonResult;
 
-  constructor(private _pokedexService: PokedexService) { }
+  pokemon$ = new Subject<Pokemon>();
+
+  constructor(private _pokedexService: PokedexService, private _store: Store<State>) { }
 
   ngOnInit() {
-
+    this._pokedexService.getPokemon(this.pokemonResult.url).pipe(
+      map(response => this.pokemon$.next(response))
+    ).subscribe();
   }
 
 }
