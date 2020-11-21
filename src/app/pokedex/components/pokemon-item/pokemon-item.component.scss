@@ -1,0 +1,9 @@
+:host {
+  display: flex;
+  .pkm-card {
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+  }
+}

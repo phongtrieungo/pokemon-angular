@@ -1,0 +1,5 @@
+<ng-container *ngIf="pokemons?.results?.length">
+  <div class="pokemon-container">
+      <app-pokemon-item *ngFor="let pokemon of pokemons.results" [pokemonResult]="pokemon"></app-pokemon-item>
+  </div>
+</ng-container>

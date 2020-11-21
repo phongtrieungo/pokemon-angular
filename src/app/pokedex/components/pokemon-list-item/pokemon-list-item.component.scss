@@ -1,0 +1,8 @@
+:host {
+  .pokemon-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    column-gap: 30px;
+    row-gap: 30px;
+  }
+}
