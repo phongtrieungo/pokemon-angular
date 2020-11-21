@@ -14,7 +14,7 @@ export interface Pokemon {
   species: {};
   sprites: PokemonSprites;
   stats: any[];
-  types: any[];
+  types: PokemonType[];
   weight: number;
 }
 
@@ -43,4 +43,13 @@ export interface PokemonSpritesOtherDreamWorld {
 
 export interface PokemonSpritesOtherOfficalArtwork {
   front_default: string
+}
+
+export interface PokemonType {
+  type: PokemonTypeItem;
+}
+
+export interface PokemonTypeItem {
+  name: string;
+  url: string;
 }

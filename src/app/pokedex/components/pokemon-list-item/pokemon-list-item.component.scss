@@ -2,9 +2,9 @@
   .pokemon-container {
     display: flex;
     flex-direction: row;
-    .pokemons, .pokemon {
-      border: 1px solid black;
-      border-radius: 4px;
+    .pokemons {
+      border-right: 1px solid black;
+      margin-right: 1rem;
     }
   }
 }
